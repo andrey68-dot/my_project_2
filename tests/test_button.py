@@ -1,10 +1,13 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.options import Options
 import pytest
 
 @pytest.fixture()
 def browser():
-    chrome_browser = webdriver.Chrome()
+    option = Options()
+    option.add_argument('--headless')
+    chrome_browser = webdriver.Chrome(options=option)
     return chrome_browser
 
 def test_button_exist(browser):
