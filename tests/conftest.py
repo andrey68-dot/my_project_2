@@ -9,3 +9,4 @@ def browser():
     option.add_argument('--headless')
     chrome_browser = webdriver.Chrome(options=option)
     return chrome_browser
+
